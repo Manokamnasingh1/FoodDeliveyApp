@@ -1,0 +1,63 @@
+.profile-page {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.profile-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.order-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-row span {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.cancel-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.cancel-button:hover {
+  background-color: #c62828;
+}
+
+
+
+

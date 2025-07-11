@@ -1,0 +1,93 @@
+.add-btn {
+    margin-top: auto;
+    padding: 0.5rem;
+    background-color: #ff9800;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+.admin-login-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.admin-login-form input {
+  padding: 10px;
+  font-size: 16px;
+}
+.admin-login-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Admin.css */
+
+.admin-layout {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+}
+
+
+
+/* Food Form */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 50%;
+
+}
+
+@media (max-height: 600px) {
+  .admin-form {
+    top: auto;
+    transform: none;
+    margin-top: 60px;
+  }
+}
+
+.admin-form input,
+.admin-form button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.admin-form button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-form button:hover {
+  background-color: #77cc16;
+}
+
+
+

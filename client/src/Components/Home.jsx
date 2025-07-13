@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './home.css';
 import { useCart } from '../context/CartContext';
+import bgImage from '../assets/images/desi-food-bg.jpg';
+
 
 const Home = () => {
   const [foods, setFoods] = useState([]);
@@ -23,9 +25,11 @@ const Home = () => {
   );
 
   return (
-    <div className="homepage-bg">
+    <div
+      className="homepage-bg"
+      style={{ backgroundImage: `url(${bgImage})` }} // ✅ dynamic background
+    >
       <div className="container">
-        
         {/* ✅ Search Bar */}
         <input
           type="text"
@@ -34,54 +38,49 @@ const Home = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-         <h2 className="title">Available Food Items</h2>
+        <h2 className="title">Available Food Items</h2>
+
         {filteredFoods.length === 0 ? (
           <p>No food items match your search.</p>
         ) : (
-          
           <div className="card-grid">
-  {filteredFoods.map((food) => (
-    <div key={food._id} className="food-card">
-      {food.image && (
-        <img
-          src={`http://localhost:5000${food.image}`}
-          alt={food.name}
-          className="food-image"
-        />
-      )}
-      <div className="food-content">
-        <div className="food-header">
-          <h3 className="food-name">{food.name}</h3>
-          <div className="veg-icon"></div>
-        </div>
-        
-        <div className="food-header">
-          <p className="food-price">₹{food.price}</p>
-          <div className="rating">10%off</div>
-        </div>
+            {filteredFoods.map((food) => (
+              <div key={food._id} className="food-card">
+                {food.image && (
+                  <img
+                    src={`http://localhost:5000${food.image}`}
+                    alt={food.name}
+                    className="food-image"
+                  />
+                )}
+                <div className="food-content">
+                  <div className="food-header">
+                    <h3 className="food-name">{food.name}</h3>
+                    <div className="veg-icon"></div>
+                  </div>
 
-        <div className="food-footer">
-          <p className="food-description">{food.description}</p>
-          <span className="rating">
-  <span role="img" aria-label="star">⭐</span> 4.5
-</span>
+                  <div className="food-header">
+                    <p className="food-price">₹{food.price}</p>
+                    <div className="rating">10% off</div>
+                  </div>
 
-        </div>
-        <button
-          className="add-btn"
-          onClick={() => handleAddToOrder(food)}
-        >
-          Add to Order
-        </button>
-      </div>
-    </div>
-  ))}
-</div>
+                  <div className="food-footer">
+                    <p className="food-description">{food.description}</p>
+                    <span className="rating">
+                      <span role="img" aria-label="star">⭐</span> 4.5
+                    </span>
+                  </div>
 
-
-
-
-
+                  <button
+                    className="add-btn"
+                    onClick={() => handleAddToOrder(food)}
+                  >
+                    Add to Order
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>
@@ -89,6 +88,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 

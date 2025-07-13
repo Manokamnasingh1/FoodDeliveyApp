@@ -1,7 +1,7 @@
 // backend/routes/auth.js
 const express = require('express');
 const router = express.Router();
-const sendWhatsAppOTP = require('../utils/sendwhatsAppOTP');
+const sendWhatsAppOTP = require('../utils/sendWhatsAppOTP');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 

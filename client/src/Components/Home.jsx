@@ -62,7 +62,10 @@ const Home = () => {
 
         <div className="food-footer">
           <p className="food-description">{food.description}</p>
-          <span className="rating">⭐ 4.5</span>
+          <span className="rating">
+  <span role="img" aria-label="star">⭐</span> 4.5
+</span>
+
         </div>
         <button
           className="add-btn"

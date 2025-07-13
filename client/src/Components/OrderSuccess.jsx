@@ -8,7 +8,10 @@ const OrderSuccess = () => {
   return (
     <div className="order-success-wrapper">
       <div className="order-success-card">
-        <h2>🎉 Order Confirmed!</h2>
+        <p>
+  <span role="img" aria-label="party">🎉</span> Order Placed!
+</p>
+
         <p>Thank you for your order.</p>
         <p><strong>Payment ID:</strong> {paymentId}</p>
       </div>

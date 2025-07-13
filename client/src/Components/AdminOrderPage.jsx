@@ -59,10 +59,19 @@ const AdminOrderPage = () => {
           {filteredOrders.map((order) => (
             <div key={order._id} className="order-card">
               <h4>{order.name || 'N/A'}</h4>
-              <p><strong>📞</strong> {order.phone || 'N/A'}</p>
-              <p><strong>🧾 ID:</strong> {order._id}</p>
-              <p><strong>🕒</strong> {new Date(order.createdAt).toLocaleString()}</p>
-              <p><strong>💰</strong> ₹{order.payment?.amount || 'N/A'}</p>
+              <p>
+  <span role="img" aria-label="phone">📞</span> {order.phone || 'N/A'}
+</p>
+<p>
+  <span role="img" aria-label="receipt">🧾</span> <strong>ID:</strong> {order._id}
+</p>
+<p>
+  <span role="img" aria-label="clock">🕒</span> {new Date(order.createdAt).toLocaleString()}
+</p>
+<p>
+  <span role="img" aria-label="money">💰</span> ₹{order.payment?.amount || 'N/A'}
+</p>
+
               <p><strong>Status:</strong>{' '}
                 <span className={order.payment?.status === 'success' ? 'status-success' : 'status-pending'}>
                   {order.payment?.status || 'Pending'}

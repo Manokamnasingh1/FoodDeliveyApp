@@ -49,9 +49,16 @@ const AdminUserPage = () => {
         <ul>
           {filteredUsers.map((user, i) => (
             <li key={i} className="admin-user-card">
-              <p><strong>👤 {user.name}</strong></p>
-              <p>📞 {user.phone}</p>
-              <p>📧 {user.email}</p>
+              <p>
+  <span role="img" aria-label="user">👤</span> <strong>{user.name}</strong>
+</p>
+<p>
+  <span role="img" aria-label="phone">📞</span> {user.phone}
+</p>
+<p>
+  <span role="img" aria-label="email">📧</span> {user.email}
+</p>
+
             </li>
           ))}
         </ul>

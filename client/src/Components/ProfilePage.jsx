@@ -61,11 +61,22 @@ const ProfilePage = () => {
     <li key={order._id} className="order-item">
       <div className="order-row">
         <div className="order-column">
-          <p><strong>🧾 Order ID:</strong> {order._id}</p>
-          <p><strong>📅 Date:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
-          <p><strong>💰 Total:</strong> ₹{order.payment?.amount || 'N/A'}</p>
-          <p><strong>📦 Status:</strong> {order.payment?.status || 'Pending'}</p>
-          <p><strong>🍽️ Items:</strong> {order.cartItems.map(item => `${item.name} (x${item.quantity})`).join(', ')}</p>
+          <p>
+  <span role="img" aria-label="receipt">🧾</span> <strong>Order ID:</strong> {order._id}
+</p>
+<p>
+  <span role="img" aria-label="calendar">📅</span> <strong>Date:</strong> {new Date(order.createdAt).toLocaleDateString()}
+</p>
+<p>
+  <span role="img" aria-label="money">💰</span> <strong>Total:</strong> ₹{order.payment?.amount || 'N/A'}
+</p>
+<p>
+  <span role="img" aria-label="package">📦</span> <strong>Status:</strong> {order.payment?.status || 'Pending'}
+</p>
+<p>
+  <span role="img" aria-label="food">🍽️</span> <strong>Items:</strong> {order.cartItems.map(item => `${item.name} (x${item.quantity})`).join(', ')}
+</p>
+
         </div>
 
         <button

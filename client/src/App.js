@@ -1,10 +1,10 @@
 
 // client/src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
-import { useAuth } from './context/AuthContext'; // ✅ Add this
+//mport { useAuth } from './context/AuthContext'; // ✅ Add this
 import ProtectedRoute from './ProtectedRoute'; // ✅ Import ProtectedRoute
 
 import ProfilePage from './Components/ProfilePage';

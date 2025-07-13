@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaConciergeBell, FaHome, FaUserShield,
-  FaShoppingBag, FaShoppingCart, FaUserCircle,
+  FaShoppingCart, FaUserCircle,
   FaBars, FaTimes
 } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';

@@ -17,7 +17,7 @@ const LoginPhone = () => {
     try {
       setMessage('');
       setError('');
-      await axios.post('http://localhost:5000/api/auth/send-otp', { phone });
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/send-otp`, { phone });
       setOtpSent(true);
       setMessage('📩 OTP sent successfully to your WhatsApp.');
     } catch {
@@ -27,12 +27,10 @@ const LoginPhone = () => {
 
   const verifyOtp = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-otp', { phone, otp });
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/verify-otp`, { phone, otp });
       const { user, token } = res.data;
-
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('token', token);
-
       setMessage('✅ Verified successfully. Redirecting...');
       setTimeout(() => navigate('/place-order-form'), 1500);
     } catch {

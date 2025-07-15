@@ -9,13 +9,13 @@ const AdminOrderPage = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/api/orders/admin/all`, {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-admin': 'true'
-          }
-        });
+  try {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/admin/all`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-admin': 'true'
+      }
+    });
 
         if (!res.ok) throw new Error('Failed to fetch orders');
 

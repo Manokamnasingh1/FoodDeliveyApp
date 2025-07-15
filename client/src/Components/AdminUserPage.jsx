@@ -7,18 +7,19 @@ const AdminUserPage = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/users', {
-      headers: { 'x-admin': 'true' }
+  fetch(`${process.env.REACT_APP_API_URL}/api/admin/users`, {
+    headers: { 'x-admin': 'true' }
+  })
+    .then(res => res.json())
+    .then(data => {
+      setUsers(data);
+      setFilteredUsers(data);
     })
-      .then(res => res.json())
-      .then(data => {
-        setUsers(data);
-        setFilteredUsers(data);
-      })
-      .catch(err => {
-        console.error('Error fetching users:', err);
-      });
-  }, []);
+    .catch(err => {
+      console.error('Error fetching users:', err);
+    });
+}, []);
+
 
   useEffect(() => {
     if (!searchPhone) {

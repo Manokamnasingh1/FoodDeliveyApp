@@ -10,14 +10,15 @@ const ProfilePage = () => {
     if (!user || !user.phone) return;
 
     const fetchOrders = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/api/orders/user/${user.phone}`);
-        const data = await res.json();
-        setOrders(data);
-      } catch (err) {
-        console.error('Failed to fetch user orders:', err);
-      }
-    };
+  try {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/user/${user.phone}`);
+    const data = await res.json();
+    setOrders(data);
+  } catch (err) {
+    console.error('Failed to fetch user orders:', err);
+  }
+};
+
 
     fetchOrders();
   }, [user]);

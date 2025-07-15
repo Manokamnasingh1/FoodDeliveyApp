@@ -19,28 +19,31 @@ const AdminDashboard = () => {
     localStorage.removeItem('adminUsername');
     navigate('/admin-login');
   };
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const userRes = await fetch('http://localhost:5000/api/admin/stats/users', {
-          headers: { 'x-admin': 'true' }
-        });
-        const userData = await userRes.json();
+ 
 
-        const orderRes = await fetch('http://localhost:5000/api/admin/stats/orders', {
-          headers: { 'x-admin': 'true' }
-        });
-        const orderData = await orderRes.json();
+useEffect(() => {
+  const fetchStats = async () => {
+    try {
+      const userRes = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/stats/users`, {
+        headers: { 'x-admin': 'true' }
+      });
+      const userData = await userRes.json();
 
-        setTotalUsers(userData.totalUsers || 0);
-        setTotalOrders(orderData.totalOrders || 0);
-      } catch (err) {
-        console.error('❌ Failed to fetch stats:', err);
-      }
-    };
+      const orderRes = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/stats/orders`, {
+        headers: { 'x-admin': 'true' }
+      });
+      const orderData = await orderRes.json();
 
-    fetchStats();
-  }, []);
+      setTotalUsers(userData.totalUsers || 0);
+      setTotalOrders(orderData.totalOrders || 0);
+    } catch (err) {
+      console.error('❌ Failed to fetch stats:', err);
+    }
+  };
+
+  fetchStats();
+}, []);
+
 
   return (
     <div>

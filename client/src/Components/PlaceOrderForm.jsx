@@ -46,11 +46,11 @@ const PlaceOrderForm = () => {
             transactionId: response.razorpay_payment_id
           };
 
-          const res = await axios.post('http://localhost:5000/api/orders', {
-            ...formData,
-            cartItems,
-            payment: paymentInfo
-          });
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/orders`, {
+        ...formData,
+        cartItems,
+        payment: paymentInfo
+      });
 
           clearCart();
           setFormData({ name: '', phone: '', street: '' });

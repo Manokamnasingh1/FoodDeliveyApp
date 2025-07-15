@@ -11,7 +11,7 @@ const Home = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/admin/foods')
+   axios.get(`${process.env.REACT_APP_API_URL}/api/admin/foods`)
       .then(res => setFoods(res.data))
       .catch(err => console.error('Failed to fetch food items:', err));
   }, []);

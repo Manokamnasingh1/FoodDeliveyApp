@@ -18,7 +18,7 @@ const paymentRoutes = require('./routes/payment');
 const orderRoutes = require('./routes/orders'); // your order model route
 const authRoutes = require('./routes/auth'); // ✅ ADD THIS LINE
 
-
+const adminRoutes = require('./routes/adminRoutes');
 
 
 
@@ -48,7 +48,7 @@ app.use('/api/payment', paymentRoutes);  // ✅ Make sure app is declared before
 app.use('/api/orders', orderRoutes);
 app.use('/api/auth', authRoutes); // ✅ ADD THIS ROUTE
 
-
+app.use('/api/admin', adminRoutes);
 
 // Root route
 app.get('/', (req, res) => {

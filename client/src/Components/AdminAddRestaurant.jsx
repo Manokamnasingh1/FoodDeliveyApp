@@ -33,14 +33,14 @@ function AdminManageFoods() {
     formData.append('description', food.description);
     formData.append('image', food.imageFile);
 
-    try {
-      const res = await fetch('http://localhost:5000/api/admin/food', {
-        method: 'POST',
-        headers: {
-          'x-admin': 'true',
-        },
-        body: formData,
-      });
+     try {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/food`, {
+    method: 'POST',
+    headers: {
+      'x-admin': 'true',
+    },
+    body: formData,
+  });
 
       const data = await res.json();
 

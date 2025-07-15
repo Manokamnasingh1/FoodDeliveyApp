@@ -11,7 +11,7 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, formData);
       setMessage('✅ Signup successful. Redirecting to login...');
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {

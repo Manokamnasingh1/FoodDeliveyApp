@@ -47,11 +47,12 @@ const Home = () => {
             {filteredFoods.map((food) => (
               <div key={food._id} className="food-card">
                 {food.image && (
-                  <img
-                    src={`http://localhost:5000${food.image}`}
-                    alt={food.name}
-                    className="food-image"
-                  />
+                 <img
+  src={`https://foodapp-backend-h3fu.onrender.com${food.image}`}
+  alt={food.name}
+  className="food-image"
+/>
+
                 )}
                 <div className="food-content">
                   <div className="food-header">

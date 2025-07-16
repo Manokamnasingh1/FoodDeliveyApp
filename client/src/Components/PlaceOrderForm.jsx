@@ -83,10 +83,11 @@ const PlaceOrderForm = () => {
 
     try {
       const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const res = await axios.post('http://localhost:5000/api/payment/create-order', {
-        amount: total
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/payment/create-order`, {
+      amount: total
       });
 
+ 
       loadRazorpay(res.data);
     } catch (err) {
       console.error(err);
